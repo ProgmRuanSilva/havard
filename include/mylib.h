@@ -1,4 +1,4 @@
-#pragma once
+#include "../lib/mylib.c"
 #include <stdlib.h>
 #include <stdio.h>
 

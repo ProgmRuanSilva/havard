@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "mylib.h"
+#include "../include/mylib.h"
 
 int get_int(const char *str);
 int get_size(void);
