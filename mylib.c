@@ -1,18 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int get_int(const char *str) {
-  int num = 0;
-  int i = 0;
+int get_int(char *str) {
+  char entry[10];
+  
+  printf("%s", str);
+  fgets(entry, sizeof(entry), stdin);
 
-  //loop for get numbers
-  while (str[i] != '\0') {
-    if (str[i] >= '0' && str[i] <= '9') {
-        num = num * 10 + (str[i] - '0');
-      }
-      i++;
-  }
-    
-  return num;
+  int number = atoi(entry);
+
+  return number; 
 }
-
