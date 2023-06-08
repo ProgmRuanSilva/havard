@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include "../include/mylib.h"
 
-int get_int(const char *str);
 int get_size(void);
 void print_grid(int size);
+int get_int(const char *str);
 
 int main(void)
 {
+  // Get size of grid
   int n = get_size();
+
+  // Print size of grid
   print_grid(n);
 }
 
