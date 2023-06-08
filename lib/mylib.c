@@ -12,13 +12,14 @@ int get_int(const  char *str) {
   return number; 
 }
 
-int get_long(const char *str) {
-  char entry[64];
+long int get_long(const char *str) {
+  char entry[32];
 
   printf("%s\n", str);
   fgets(entry, sizeof(entry), stdin);
 
-  int number = atoi(entry);
+  long int number = atoi(entry);
 
   return number;
 }
+
