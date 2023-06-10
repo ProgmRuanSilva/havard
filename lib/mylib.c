@@ -23,3 +23,4 @@ long int get_long(const char *str) {
   return number;
 }
 
+//get_float();
