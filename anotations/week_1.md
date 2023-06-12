@@ -12,3 +12,7 @@ Week 1
     i made a Makefile to compile more simply.
 
     i made the section_one exercise with two possibilities: one declarin char before and fgets to do it more eficiency. and made with mylib get_int method, for more leability.
+
+    the do method dont ask anything before execute it.
+
+    i try make get_string using on mylib, but do not working.
