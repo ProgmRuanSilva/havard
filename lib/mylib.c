@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int get_int(const  char *str) {
-  char entry[32];
+  char entry[8];
   
   printf("%s", str);
   fgets(entry, sizeof(entry), stdin);
@@ -13,7 +13,7 @@ int get_int(const  char *str) {
 }
 
 long int get_long(const char *str) {
-  char entry[32];
+  char entry[8];
 
   printf("%s", str);
   fgets(entry, sizeof(entry), stdin);
@@ -24,7 +24,7 @@ long int get_long(const char *str) {
 }
 
 float get_float(const char *str) {
-  char entry[32];
+  char entry[8];
 
   printf("%s", str);
   fgets(entry, sizeof(entry), stdin);
