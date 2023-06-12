@@ -15,7 +15,7 @@ int get_int(const  char *str) {
 long int get_long(const char *str) {
   char entry[32];
 
-  printf("%s\n", str);
+  printf("%s", str);
   fgets(entry, sizeof(entry), stdin);
 
   long int number = atoi(entry);
@@ -23,4 +23,13 @@ long int get_long(const char *str) {
   return number;
 }
 
-//get_float();
+float get_float(const char *str) {
+  char entry[32];
+
+  printf("%s", str);
+  fgets(entry, sizeof(entry), stdin);
+
+  float number = atoi(entry);
+
+  return number;
+}
