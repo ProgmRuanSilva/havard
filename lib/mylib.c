@@ -12,7 +12,7 @@ int get_int(const  char *str) {
   return number; 
 }
 
-long int get_long(const char *str) {
+long get_long(const char *str) {
   char entry[8];
 
   printf("%s", str);

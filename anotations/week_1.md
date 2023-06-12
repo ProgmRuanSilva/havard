@@ -10,3 +10,5 @@ Week 1
     after much pain and suffering, i make it function with fgets and atoi. and make directories for more mantainability.
     it was difficult learn more about pointers and types of values but i did't.
     i made a Makefile to compile more simply.
+
+    i made the section_one exercise with two possibilities: one declarin char before and fgets to do it more eficiency. and made with mylib get_int method, for more leability.

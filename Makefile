@@ -5,4 +5,4 @@ calculator:
 	gcc src/calculator.c include/mylib.h -o bin/calculator
 
 section:
-	gcc src/section1.c -o bin/section1
+	gcc src/section1.c include/mylib.h -o bin/section1
