@@ -12,3 +12,6 @@ llamas:
 
 truncation:
 	gcc src/truncation.c include/mylib.h -o bin/truncation
+
+score: 
+	gcc src/score.c include/mylib.h -o bin/score
