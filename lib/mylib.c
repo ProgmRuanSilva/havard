@@ -33,3 +33,6 @@ float get_float(const char *str) {
 
   return number;
 }
+
+typedef char *string;
+

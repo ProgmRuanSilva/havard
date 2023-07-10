@@ -15,3 +15,9 @@ truncation:
 
 score: 
 	gcc src/score.c include/mylib.h -o bin/score
+
+status: 
+	gcc src/status.c -o bin/score
+
+memory: 
+	gcc src/memory.c include/mylib.h -o bin/memory
