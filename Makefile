@@ -21,3 +21,11 @@ status:
 
 memory: 
 	gcc src/memory.c include/mylib.h -o bin/memory
+
+pointers:
+	gcc src/pointers.c include/mylib.h -o bin/pointers
+
+alocation:
+	gcc src/alocation.c include/mylib.h -o bin/alocation
+
+#gcc src/ .c include/mylib.h -o bin/

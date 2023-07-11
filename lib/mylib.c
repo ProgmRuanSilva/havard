@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef char *string;
+
 int get_int(const  char *str) {
   char entry[8];
   
@@ -33,6 +35,3 @@ float get_float(const char *str) {
 
   return number;
 }
-
-typedef char *string;
-
