@@ -31,7 +31,10 @@ alocation:
 search:
 	gcc src/search.c include/mylib.h -o bin/search
 
-# gcc src/ .c include/mylib.h -o bin/
+phonebook:
+	gcc src/phonebook.c include/mylib.h -o bin/phonebook
+
+
 # gcc src/ .c include/mylib.h -o bin/
 # gcc src/ .c include/mylib.h -o bin/
 # gcc src/ .c include/mylib.h -o bin/

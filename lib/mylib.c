@@ -35,3 +35,14 @@ float get_float(const char *str) {
 
   return number;
 }
+
+string get_string(const char *str) {
+  char entry[100]; 
+
+  printf("%s", str);
+  fgets(entry, sizeof(entry), stdin);
+
+  string value = entry;
+
+  return value;
+}
