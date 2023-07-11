@@ -34,7 +34,7 @@ search:
 phonebook:
 	gcc src/phonebook.c include/mylib.h -o bin/phonebook
 
-
-# gcc src/ .c include/mylib.h -o bin/
+iteration:
+	gcc src/iteration.c include/mylib.h -o bin/iteration
 # gcc src/ .c include/mylib.h -o bin/
 # gcc src/ .c include/mylib.h -o bin/
