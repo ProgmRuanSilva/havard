@@ -44,5 +44,64 @@ FOREGIN KEY
 
 SELECT title FROM shows WHERE id IN (SELECT show_id FROM genres WHERE genre = 'Comedy');
 
+SELECT * FROM people WHERE name = 'Steve Carell';
 
+SELECT * FROM stars WHERE person_id = 136797;
+SELECT title FROM shows WHERE id = 118420;
 
+SELECT * FROM people WHERE name = 'Steve Carrel';
+
+SELECT * FROM stars WHERE person_id = (SELECT id FROM people WHERE name = 'Steve Carell');
+
+SELECT show_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = 'Steve Carell');
+
+now (i think) we can get a tre's selects from different tables
+
+SELECT title FROM shows WHERE id IN (SELECT show_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = 'Steve Carrel'));
+
+the JOIN command get his content and 'merge' with other table;
+
+SELECT * FROM shows JOIN genres ON shows.id = genres.show_id WHERE title = 'The Office';
+
+SELECT title FROM people 
+  JOIN stars ON people.id = stars.person_id 
+  JOIN shows ON stars.show_id = shows.id
+  WHERE name = 'Steve Carell';
+
+you can select multiple tables with ,
+
+SELECT title FROM people, stars, shows
+  WHERE people.id = stars.person_id
+  AND stars.show_id = shows.id
+  AND name = 'Steve Carell';
+
+you can search a not specific word but a LIKE word:
+(this query is slow)
+SELECT * FROM people WHERE  name LIKE 'Steve C%';
+
+index is more eficient
+
+Let's check how long the time of query is fast
+
+SELECT * FROM shows WHERE title = 'The Office';
+
+So lets make a index to title table
+
+CREATE INDEX title_index ON shows (title);
+
+but if we have a so much requires for server? for this we have a this commands:
+BEGIN TRANSACTION
+COMMIT 
+ROLLBACK
+
+db.execute("BEGIN TRANSACTION")
+rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+likes = rows[0]["likes"]
+db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes + 1, id);
+db.execute("COMMIT")
+
+SQL injection warning
+rows = db.execute(f"SELECT * FROM users WHERE username = 'malan@havard.edu'--' AND password = '{password}'") 
+any code above this is fagile to SQL injection
+
+sanitize your injections queryes
