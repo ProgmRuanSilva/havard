@@ -104,4 +104,71 @@ SQL injection warning
 rows = db.execute(f"SELECT * FROM users WHERE username = 'malan@havard.edu'--' AND password = '{password}'") 
 any code above this is fagile to SQL injection
 
-sanitize your injections queryes
+sanitize your injections queries
+
+
+seccond lesson
+SELECT * FROM students;
+
+SELECT student_name FROM students WHERE student_name LIKE "%Potter";
+
+find the names and houses of students whose names begin with "H".
+
+SELECT student_name, house FROM students WHERE student_name LIKE "H%";
+(doet for my own)
+
+Design Principles 
+- Each table should be a collection of a single entity.
+- For example, we should have a different table fo each of students, houses, an student-house assignments
+
+the correct is:
+-students table with id and name of student
+-houses table with student_name and head collums
+-assignments table with id, student_id, house_id
+
+Design Principles
+-Each piece of data should be stored in a sigle locaiton, and thereafter referred to by its ID ("primary key").
+-For example, we should ensure every student adn house has an ID, then use those IDs in the house assignments table.
+assignments table have a foregin key of houses and students
+
+CREATE TABLE houses (
+    id INTERGER NOT NULL,
+    house TEXT NOT NULL,
+    head TEXT NOT NULL,
+    PRIMARY KEY(id)
+    );
+
+this is the best way why changes are more simply
+
+INSERT INTO houses (house, head)
+  VALUES('Gryffindor', 'McGonagall');
+
+INSERT INTO houses (id, house, head)
+  VALUES(2, 'Slytherin', 'Severus Snape');
+
+he change the database with doned updates
+
+SELECT COUNT(student_id)
+FROM assignments
+WHERE house_id = 
+(
+  SELECT id
+  FROM houses
+  WHERE house = 'Gryffindor'
+);
+
+the JOIN is best to use for this
+
+SELECT * FROM assignments
+JOIN houses ON houses.id = assignments.house_id;
+
+SELECT COUNT(student_id) FROM assignments
+JOIN houses ON houses.id = assignments.house_id
+WHERE houses.house = 'Gryffindor';
+
+we use the assignments collum to specify the new collum on JOIN table
+
+SELECT house, COUNT(student_id)
+FROM assignments
+JOIN houses ON houses.id = assignments.house_id
+GRUP BY house;
